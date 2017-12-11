@@ -14,7 +14,7 @@ public:
 	solves();
 	~solves();
 };
-int createlistview(HWND hDlg);
+HWND createlistview(HWND hDlg);
 int reflashline(HWND hDlg);
 
 int reflashdata(HWND hDlg);

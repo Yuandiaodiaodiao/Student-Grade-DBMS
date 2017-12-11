@@ -10,17 +10,17 @@ solves::~solves()
 }
 
 
-int createlistview(HWND hDlg)
+HWND createlistview(HWND hDlg)
 {
-	databases.displayalldata();
+	databases.displayallitem();
 	HWND hListview=GetDlgItem(hDlg,IDC_LIST2);
-	listview1=hListview;
+	
 	reflashline(hDlg);
 	reflashdata(hDlg);
 	ListView_SetView(hListview,LVS_REPORT|LVS_SHOWSELALWAYS);
 	ListView_SetExtendedListViewStyle(hListview,LVS_EX_FULLROWSELECT|LVS_EX_DOUBLEBUFFER|LVS_EX_CHECKBOXES);//LVS_EX_TRACKSELECTÈÈ×·×Ù
-	ListView_SetHotItem(listview1,0);
-	return 0;
+	ListView_SetHotItem(hListview,0);
+	return hListview;
 }
 
 int reflashline(HWND hDlg)
