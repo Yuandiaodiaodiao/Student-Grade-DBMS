@@ -1,14 +1,10 @@
 #pragma once
-#include<iostream>
-#include<fstream>
-#include<cstdio>
+#include "stdafx.h"
+#include <vector>
 #include<map>
-#include<vector>
-#include<string>
-#include<stdlib.h>
-#include<sstream>
 #include<set>
 using namespace std;
+
 class Stugrade{
 public:
 	Stugrade();

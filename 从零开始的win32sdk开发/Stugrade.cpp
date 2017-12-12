@@ -121,7 +121,7 @@ int Stugrade::savedata()
 }
 
 int Stugrade::displayallitem()
-{
+{if(displayord.size()!=0)
 	displayord.clear();
 	for(int a=0; a<=datas.size()-1; ++a)
 	{

@@ -1,13 +1,5 @@
 #pragma once
-#include<iostream>
-#include<fstream>
-#include<cstdio>
-#include<map>
-#include<vector>
-#include<string>
-#include<stdlib.h>
-#include<sstream>
-#include<set>
+#include "stdafx.h"
 using namespace std;
 class solves{
 public:
