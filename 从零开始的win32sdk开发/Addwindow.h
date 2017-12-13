@@ -15,6 +15,7 @@ public:
 	static Stugrade * datasx;
 	static HWND edits;
 	static int addpos;
+	
 	static map<string,string> mapbuff;
 	static INT_PTR CALLBACK    Dlgadd(HWND,UINT,WPARAM,LPARAM);
 };

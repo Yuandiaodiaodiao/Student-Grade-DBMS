@@ -20,22 +20,22 @@ set<int> filter::return_del_item(string keystring,int flitem,string flstring)
 bool filter::cmp0(string x,string cmp)
 {
 	if(ifstring(x))return x<cmp;
-	else return atoi(x.c_str())<atoi(cmp.c_str());
+	else return atof(x.c_str())<atof(cmp.c_str());
 }
 bool filter::cmp1(string x,string cmp)
 {
 	if(ifstring(x))return x<=cmp;
-	else return atoi(x.c_str())<=atoi(cmp.c_str());
+	else return atof(x.c_str())<=atof(cmp.c_str());
 }
 bool filter::cmp2(string x,string cmp)
 {
 	if(ifstring(x))return x>cmp;
-	else return atoi(x.c_str())>atoi(cmp.c_str());
+	else return atof(x.c_str())>atof(cmp.c_str());
 }
 bool filter::cmp3(string x,string cmp)
 {
 	if(ifstring(x))return x>=cmp;
-	else return atoi(x.c_str())>=atoi(cmp.c_str());
+	else return atof(x.c_str())>=atof(cmp.c_str());
 }
 bool filter::cmp4(string x,string cmp)
 {
@@ -49,7 +49,7 @@ bool filter::cmp5(string x,string cmp)
 }
 bool filter::ifstring(string x)
 {
-	int xc=atoi(x.c_str());
+	double xc=atof(x.c_str());
 	if(xc!=0||to_string(xc)==x)return false;
 	else return true;
 }

@@ -8,6 +8,7 @@ class Stugrade{
 public:
 	Stugrade();
 	~Stugrade();
+	vector<int>stanum;
 	vector<string> keyord;
 	map<string,string>keytype;
 	vector<int>displayord;

@@ -5,7 +5,7 @@ using std::placeholders::_1;
 using std::placeholders::_2;
 Stugrade::Stugrade()
 {
-	filestring="d:\\qq295\\Desktop\\fileout.txt";
+	filestring="file.txt";
 }
 Stugrade::~Stugrade()
 {
