@@ -13,7 +13,7 @@ filter::~filter()
 set<int> filter::return_del_item(string keystring,int flitem,string flstring)
 {
 	set<int>delsets;
-	for(int a=0; a<=databases.displayord.size()-1; ++a)
+	for(int a=0; a<=((int)databases.displayord.size())-1; ++a)
 	{
 		//(this->**f)(flstring,flstring);
 		if(!((this->**(f+flitem))(databases.datas[databases.displayord[a]][keystring],flstring)))

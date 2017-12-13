@@ -22,15 +22,29 @@ HWND createlistview(HWND hDlg)
 	ListView_SetHotItem(hListview,0);
 	return hListview;
 }
+int dellistview(HWND hDlg)
+{
+	HWND hListview=GetDlgItem(hDlg,IDC_LIST2);
+	for(int a=(int)databases.keyord.size()-1; a>=0; --a)
+	{
+		ListView_DeleteColumn(hListview,0);
+		//MessageBoxA(hDlg,to_string(a).c_str(),"23",0);
+	}
+	
+	ListView_DeleteAllItems(hListview);
+	return 0;
 
+}
 int reflashline(HWND hDlg)
 {
 	HWND hListview=GetDlgItem(hDlg,IDC_LIST2);
+	
 	for(int a=1-1; a<=(int)databases.keyord.size()-1; ++a)
 	{
-		ListView_DeleteColumn(hListview,a);
+		ListView_DeleteColumn(hListview,0);
+		//MessageBoxA(hDlg,to_string(a).c_str(),"23",0);
 	}
-	hListview;
+	
 	LVCOLUMN vcl;
 	vcl.mask=LVCF_TEXT|LVCF_WIDTH|LVCF_SUBITEM;
 	// µÚÒ»ÁÐ  

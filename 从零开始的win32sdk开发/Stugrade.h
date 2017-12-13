@@ -16,7 +16,7 @@ public:
 	int printdata(vector<map<string,string> >x);
 	//	void savedata();
 	//	vector<map<string,string> > findvalue(string keystring,string valuestring);
-	int readdata();
+	int readdata(HWND hDlg);
 	int deldata(set <int> x);
 	 bool orcmp;
 	 string cmpkey;
@@ -25,6 +25,10 @@ public:
 	int savedata();
 	int displayallitem();
 	int deldisplay(set<int>x);
+	string filestring;
+	int readfile();
+	int writefile(HWND hDlg);
+	int savefile(HWND hDlg);
 };
 
 

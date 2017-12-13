@@ -1,22 +1,28 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2006
+VisualStudioVersion = 15.0.27130.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "从零开始的win32sdk开发", "从零开始的win32sdk开发\从零开始的win32sdk开发.vcxproj", "{77D6120C-AFD3-485F-BD32-AA3191D8EF82}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		233|x64 = 233|x64
+		233|x86 = 233|x86
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{77D6120C-AFD3-485F-BD32-AA3191D8EF82}.233|x64.ActiveCfg = 233|x64
+		{77D6120C-AFD3-485F-BD32-AA3191D8EF82}.233|x64.Build.0 = 233|x64
+		{77D6120C-AFD3-485F-BD32-AA3191D8EF82}.233|x86.ActiveCfg = Debug|Win32
+		{77D6120C-AFD3-485F-BD32-AA3191D8EF82}.233|x86.Build.0 = Debug|Win32
 		{77D6120C-AFD3-485F-BD32-AA3191D8EF82}.Debug|x64.ActiveCfg = Debug|x64
 		{77D6120C-AFD3-485F-BD32-AA3191D8EF82}.Debug|x64.Build.0 = Debug|x64
-		{77D6120C-AFD3-485F-BD32-AA3191D8EF82}.Debug|x86.ActiveCfg = Debug|Win32
-		{77D6120C-AFD3-485F-BD32-AA3191D8EF82}.Debug|x86.Build.0 = Debug|Win32
+		{77D6120C-AFD3-485F-BD32-AA3191D8EF82}.Debug|x86.ActiveCfg = Release|Win32
+		{77D6120C-AFD3-485F-BD32-AA3191D8EF82}.Debug|x86.Build.0 = Release|Win32
 		{77D6120C-AFD3-485F-BD32-AA3191D8EF82}.Release|x64.ActiveCfg = Release|x64
 		{77D6120C-AFD3-485F-BD32-AA3191D8EF82}.Release|x64.Build.0 = Release|x64
 		{77D6120C-AFD3-485F-BD32-AA3191D8EF82}.Release|x86.ActiveCfg = Release|Win32

@@ -36,6 +36,9 @@
     <ClInclude Include="filter.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Addwindow.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -53,6 +56,9 @@
     <ClCompile Include="filter.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Addwindow.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="从零开始的win32sdk开发.rc">
@@ -64,6 +70,12 @@
       <Filter>资源文件</Filter>
     </Image>
     <Image Include="从零开始的win32sdk开发.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="icon1.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="icon2.ico">
       <Filter>资源文件</Filter>
     </Image>
   </ItemGroup>
