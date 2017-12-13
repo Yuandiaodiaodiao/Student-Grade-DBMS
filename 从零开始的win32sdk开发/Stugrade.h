@@ -4,7 +4,6 @@
 #include<map>
 #include<set>
 using namespace std;
-
 class Stugrade{
 public:
 	Stugrade();
@@ -30,6 +29,3 @@ public:
 	int writefile(HWND hDlg);
 	int savefile(HWND hDlg);
 };
-
-
-

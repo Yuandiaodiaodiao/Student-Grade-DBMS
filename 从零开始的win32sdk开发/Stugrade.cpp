@@ -24,7 +24,6 @@ if(keytype[cmpkey]=="成绩")
 int Stugrade::sortviakey(int x)
 {
 	auto bound_cmp=bind(&Stugrade::cmp,this,_1,_2);
-
 	if(cmpkey==keyord[x])orcmp=!orcmp;
 	else cmpkey=keyord[x];
 	stable_sort(displayord.begin(),displayord.end(),bound_cmp);
@@ -37,15 +36,12 @@ int Stugrade::deldata(set<int>x)
 	std::vector<map<string,string> >::iterator it=datas.begin();
 	for(int a=0; it!=datas.end(); ++a)
 	{
-		
-		
 		if(x.count(a))
 		{
 			delcounts++;
 			deldis.insert(atoi(it->find("显示标号")->second.c_str()));
 			it->find("显示标号")->second="-1";
 			it=datas.erase(it);
-
 		}
 		else
 		{
@@ -81,17 +77,13 @@ int Stugrade::readdata(HWND hDlg)
 	//file.open("\\file.txt",ios::in|ios::out);//数据保存的文件 
 	if(!file.good())
 	{
-		
 		MessageBox(hDlg,"文件打开失败","警告!",MB_OK);
 		readfile();
 		file.open(filestring,ios::in|ios::out);
 	}
-
 	string sline;
-
 	string skey;
 	stringstream ss;
-	
 	getline(file,sline);
 	ss=stringstream(sline);
 	while(ss>>skey)keyord.push_back(skey);//输入所有的key 
@@ -118,10 +110,8 @@ int Stugrade::savedata()
 {
 	fstream file;
 	file.open(filestring,ios::trunc|ios::out);
-	
 	for(int a=0; a<=(int)keyord.size()-1; ++a)file<<keyord[a]<<" "; file<<endl;
 	for(int a=0; a<=(int)keyord.size()-1; ++a)file<<keytype[keyord[a]]<<" "; file<<endl;
-
 	for(int a=0; a<=(int)datas.size()-1; ++a)
 	{
 		for(int b=0; b<=(int)keyord.size()-1; ++b)
@@ -134,7 +124,6 @@ int Stugrade::savedata()
 	file.close();
 	return 1;
 }
-
 int Stugrade::displayallitem()
 {if(displayord.size()!=0)
 	displayord.clear();
@@ -142,28 +131,22 @@ int Stugrade::displayallitem()
 	{
 		displayord.push_back(a);
 		datas[a]["显示标号"]=to_string(a);
-
 	}
 	return 0;
 }
-
 int Stugrade::deldisplay(set<int> x)
 {
-	
 	std::vector<int>::iterator it=displayord.begin();
 	for(int a=0; it!=displayord.end(); ++a)
 	{
-	
 		if(x.count(a))
 		{
-			
 			it=displayord.erase(it);
 		} else
 			++it;
 	}
 	return 0;
 }
-
 int Stugrade::readfile()
 {
 	OPENFILENAME opfn;
@@ -191,11 +174,8 @@ int Stugrade::readfile()
 	else return 1;
 	return 0;
 }
-
 int Stugrade::writefile(HWND hDlg)
 {
-
-
 	TCHAR szPathName[MAX_PATH];
 	BROWSEINFO bInfo={0};
 	bInfo.hwndOwner=GetForegroundWindow();//父窗口  
@@ -213,7 +193,6 @@ int Stugrade::writefile(HWND hDlg)
 	}
 	return 0;
 }
-
 int Stugrade::savefile(HWND hDlg)
 {
 	TCHAR szPathName[MAX_PATH];
@@ -244,4 +223,3 @@ int Stugrade::savefile(HWND hDlg)
 	}
 	return 0;
 }
-

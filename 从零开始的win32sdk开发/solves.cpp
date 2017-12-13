@@ -1,20 +1,15 @@
 #include "stdafx.h"
 #include "solves.h"
-
-
 solves::solves()
 {
 }
 solves::~solves()
 {
 }
-
-
 HWND createlistview(HWND hDlg)
 {
 	databases.displayallitem();
 	HWND hListview=GetDlgItem(hDlg,IDC_LIST2);
-	
 	reflashline(hDlg);
 	reflashdata(hDlg);
 	ListView_SetView(hListview,LVS_REPORT|LVS_SHOWSELALWAYS);
@@ -30,21 +25,17 @@ int dellistview(HWND hDlg)
 		ListView_DeleteColumn(hListview,0);
 		//MessageBoxA(hDlg,to_string(a).c_str(),"23",0);
 	}
-	
 	ListView_DeleteAllItems(hListview);
 	return 0;
-
 }
 int reflashline(HWND hDlg)
 {
 	HWND hListview=GetDlgItem(hDlg,IDC_LIST2);
-	
 	for(int a=1-1; a<=(int)databases.keyord.size()-1; ++a)
 	{
 		ListView_DeleteColumn(hListview,0);
 		//MessageBoxA(hDlg,to_string(a).c_str(),"23",0);
 	}
-	
 	LVCOLUMN vcl;
 	vcl.mask=LVCF_TEXT|LVCF_WIDTH|LVCF_SUBITEM;
 	// 第一列  
@@ -57,7 +48,6 @@ int reflashline(HWND hDlg)
 	}
 	return 0;
 }
-
 int reflashdata(HWND hDlg)
 {
 	HWND hListview=GetDlgItem(hDlg,IDC_LIST2);
@@ -68,7 +58,6 @@ int reflashdata(HWND hDlg)
 	{
 		string sx;
 		sx=to_string(databases.displayord[t]);
-
 		int a=databases.displayord[t];
 		databases.datas[a]["显示标号"]=to_string(t);
 		vitem.iSubItem=0;
@@ -85,7 +74,6 @@ int reflashdata(HWND hDlg)
 	}
 	return 0;
 }
-
 int GetIndex(HWND hList)
 {
 	int i,n;
@@ -93,13 +81,10 @@ int GetIndex(HWND hList)
 	for(i=0; i < n; i++)
 		if(ListView_GetItemState(hList,i,LVIS_FOCUSED)==LVIS_FOCUSED)
 		{
-
 			return i;
 		}
-
 	return -1;
 }
-
 std::wstring StringToWString(const std::string& str)
 {
 	int num=MultiByteToWideChar(CP_UTF8,0,str.c_str(),-1,NULL,0);

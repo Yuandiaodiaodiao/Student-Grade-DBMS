@@ -18,4 +18,3 @@ public:
 	static map<string,string> mapbuff;
 	static INT_PTR CALLBACK    Dlgadd(HWND,UINT,WPARAM,LPARAM);
 };
-

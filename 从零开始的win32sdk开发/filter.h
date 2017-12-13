@@ -22,4 +22,3 @@ public:
 	//bool(*f)(string,string);
 string cmpstring[6]={"小于","小于等于","大于","大于等于","等于","不等于"};
 };
-
