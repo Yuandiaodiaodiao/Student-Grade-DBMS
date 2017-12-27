@@ -30,6 +30,7 @@ int dellistview(HWND hDlg)
 }
 int reflashline(HWND hDlg)
 {
+
 	HWND hListview=GetDlgItem(hDlg,IDC_LIST2);
 	for(int a=1-1; a<=(int)databases.keyord.size()-1+1; ++a)
 	{
@@ -41,14 +42,18 @@ int reflashline(HWND hDlg)
 	// 第一列  
 	vcl.cx=70;
 	int a;
+	if(databases.datas.size()==0)return 1;
 	for( a=1-1; a<=(int)databases.keyord.size()-1; ++a)
 	{
+		vcl.cx=max(databases.datas[0][databases.keyord[a]].length()*10,databases.keyord[a].size()*10);
+		if(a==0)vcl.cx+=30;
 		vcl.pszText=(char*)databases.keyord[a].c_str();
 		vcl.iSubItem=a;
 		ListView_InsertColumn(hListview,a,&vcl);
 	}
 	
 	string s1="排名";
+	vcl.cx=40;
 	vcl.pszText=(char*)s1.c_str();
 	vcl.iSubItem=a;
 	ListView_InsertColumn(hListview,a,&vcl);
@@ -56,10 +61,12 @@ int reflashline(HWND hDlg)
 }
 int reflashdata(HWND hDlg)
 {
+	
 	HWND hListview=GetDlgItem(hDlg,IDC_LIST2);
 	LVITEM vitem;
 	vitem.mask=LVIF_TEXT;
 	ListView_DeleteAllItems(hListview);
+	if(databases.datas.size()==0)return 1;
 	for(int t=1-1; t<=(int)databases.displayord.size()-1; ++t)
 	{
 		string sx;
