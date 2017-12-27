@@ -110,7 +110,7 @@ INT_PTR Statistics::DlgStatistics(HWND hDlg, UINT message, WPARAM wParam, LPARAM
 			{
 			case CBN_SELCHANGE:
 			{//list选择改变
-				Stugrade &datap = *datasx;
+				//Stugrade &datap = *datasx;
 				//MessageBoxA(hDlg,"lbnchange","辣鸡",0);
 				int x1=ComboBox_GetCurSel(drop1);
 				int x2=ComboBox_GetCurSel(drop2);
@@ -134,7 +134,7 @@ INT_PTR Statistics::DlgStatistics(HWND hDlg, UINT message, WPARAM wParam, LPARAM
 			{
 				case CBN_SELCHANGE:
 				{//list选择改变
-					Stugrade &datap=*datasx;
+					//Stugrade &datap=*datasx;
 					//MessageBoxA(hDlg,"lbnchange","辣鸡",0);
 					int x1=ComboBox_GetCurSel(drop1);
 					int x2=ComboBox_GetCurSel(drop2);

@@ -14,8 +14,6 @@ public:
 	vector<int>displayord;
 	vector<map<string,string> >datas;
 	int printdata(vector<map<string,string> >x);
-	//	void savedata();
-	//	vector<map<string,string> > findvalue(string keystring,string valuestring);
 	int readdata(HWND hDlg);
 	int deldata(set <int> x);
 	 bool orcmp;

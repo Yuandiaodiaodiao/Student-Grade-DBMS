@@ -20,7 +20,7 @@ HWND createlistview(HWND hDlg)
 int dellistview(HWND hDlg)
 {
 	HWND hListview=GetDlgItem(hDlg,IDC_LIST2);
-	for(int a=(int)databases.keyord.size()-1; a>=0; --a)
+	for(int a=(int)databases.keyord.size()-1+1; a>=0; --a)
 	{
 		ListView_DeleteColumn(hListview,0);
 		//MessageBoxA(hDlg,to_string(a).c_str(),"23",0);
@@ -31,7 +31,7 @@ int dellistview(HWND hDlg)
 int reflashline(HWND hDlg)
 {
 	HWND hListview=GetDlgItem(hDlg,IDC_LIST2);
-	for(int a=1-1; a<=(int)databases.keyord.size()-1; ++a)
+	for(int a=1-1; a<=(int)databases.keyord.size()-1+1; ++a)
 	{
 		ListView_DeleteColumn(hListview,0);
 		//MessageBoxA(hDlg,to_string(a).c_str(),"23",0);
@@ -40,12 +40,18 @@ int reflashline(HWND hDlg)
 	vcl.mask=LVCF_TEXT|LVCF_WIDTH|LVCF_SUBITEM;
 	// 第一列  
 	vcl.cx=70;
-	for(int a=1-1; a<=(int)databases.keyord.size()-1; ++a)
+	int a;
+	for( a=1-1; a<=(int)databases.keyord.size()-1; ++a)
 	{
 		vcl.pszText=(char*)databases.keyord[a].c_str();
 		vcl.iSubItem=a;
 		ListView_InsertColumn(hListview,a,&vcl);
 	}
+	
+	string s1="排名";
+	vcl.pszText=(char*)s1.c_str();
+	vcl.iSubItem=a;
+	ListView_InsertColumn(hListview,a,&vcl);
 	return 0;
 }
 int reflashdata(HWND hDlg)
@@ -65,12 +71,17 @@ int reflashdata(HWND hDlg)
 		vitem.pszText=(char*)databases.datas[a][databases.keyord[0]].c_str();
 		ListView_InsertItem(hListview,&vitem);
 		//DialogBoxParam(hInst,MAKEINTRESOURCE(IDD_PROPPAGE_SMALL),hDlg,(DLGPROC)Dlgyesorno,(LPARAM)sx.c_str());
-		for(int b=1; b<=(int)databases.keyord.size()-1; ++b)
+		int b;
+		for( b=1; b<=(int)databases.keyord.size()-1; ++b)
 		{
 			vitem.iSubItem=b;
 			vitem.pszText=(char*)databases.datas[a][databases.keyord[b]].c_str();
 			ListView_SetItem(hListview,&vitem);
 		}
+		vitem.iSubItem=b;
+		string st=to_string(t+1);
+		vitem.pszText=(char*)st.c_str();
+		ListView_SetItem(hListview,&vitem);
 	}
 	return 0;
 }

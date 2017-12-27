@@ -161,6 +161,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Addwindow.h" />
+    <ClInclude Include="Editwindow.h" />
     <ClInclude Include="filter.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="solves.h" />
@@ -172,6 +173,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Addwindow.cpp" />
+    <ClCompile Include="Editwindow.cpp" />
     <ClCompile Include="filter.cpp" />
     <ClCompile Include="solves.cpp" />
     <ClCompile Include="Statistics.cpp" />

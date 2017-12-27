@@ -42,6 +42,9 @@
     <ClInclude Include="Statistics.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Editwindow.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -63,6 +66,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Statistics.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Editwindow.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

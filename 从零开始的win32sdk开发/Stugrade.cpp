@@ -96,6 +96,7 @@ int Stugrade::readdata(HWND hDlg)
 	while(getline(file,sline))
 	{
 		map<string,string>m;
+		if(sline=="")continue;
 		ss=stringstream(sline);
 		for(int b=1-1; b<=(int)keyord.size()-1; ++b)
 		{
@@ -104,6 +105,7 @@ int Stugrade::readdata(HWND hDlg)
 		datas.push_back(m);
 	}
 	file.close();
+	if(databases.datas.size()==0)MessageBox(hDlg,"文件格式不是有效的 请通过菜单->文件->打开 打开其他有效的文件","警告!",MB_OK);
 	return 0;
 }
 int Stugrade::savedata()

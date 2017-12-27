@@ -23,6 +23,8 @@ INT_PTR CALLBACK Addwindow::Dlgadd(HWND hDlg,UINT message,WPARAM wParam,LPARAM l
 			datasx=(Stugrade*)lParam;
 			Stugrade &datap=*datasx;
 			addpos=0;
+			HWND editx=GetDlgItem(hDlg,IDC_EDIT2);
+			Edit_SetText(editx,to_string(datap.datas.size()).c_str());
 			texts=GetDlgItem(hDlg,IDC_STATIC);
 			listbox=GetDlgItem(hDlg,IDC_LIST1);
 			buttonnext=GetDlgItem(hDlg,IDC_BUTTON1);
@@ -98,7 +100,12 @@ INT_PTR CALLBACK Addwindow::Dlgadd(HWND hDlg,UINT message,WPARAM wParam,LPARAM l
 				{
 					//MessageBoxA(hDlg,to_string(addpos).c_str(),"À±¼¦",0);
 					Stugrade &datap=*datasx;
-					datap.datas.push_back(mapbuff);
+					HWND editx=GetDlgItem(hDlg,IDC_EDIT2);
+					char ss[101];
+					Edit_GetText(editx,ss,100);
+					int xa=atoi(ss);
+					datap.datas.insert(datap.datas.begin()+xa,mapbuff);
+					
 					EndDialog(hDlg,LOWORD(wParam));
 					return (INT_PTR)TRUE;
 					break;
